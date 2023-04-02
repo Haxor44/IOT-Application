@@ -18,12 +18,12 @@ if ($text == "") {
 } else if ($text == "1") {
     // Business logic for first level response
     
-   $response =  "Baud rate";
+   $response =  "CON Baud rate";
 
 } else if ($text == "2") {
     // Business logic for first level response
     // This is a terminal request. Note how we start the response with END
-    $response =  $phoneNumber;
+    $response =  "CON".$phoneNumber;
 
 } else{
     $response = "END Invalid Request!";

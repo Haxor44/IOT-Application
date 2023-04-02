@@ -8,7 +8,7 @@ $serviceCode = $_POST["serviceCode"];
 $phoneNumber = ltrim($_POST["phoneNumber"],'+');
 $text        = $_POST["text"];
 
-
+$reponse = "";
 if ($text == "") {
     // This is the first request. Note how we start the response with CON
     $response  = "CON What would you want to check \n";

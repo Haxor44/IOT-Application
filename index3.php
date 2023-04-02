@@ -8,7 +8,7 @@ $serviceCode = $_POST["serviceCode"];
 $phoneNumber = ltrim($_POST["phoneNumber"],'+');
 $text        = $_POST["text"];
 
-$reponse = "";
+
 if ($text == "") {
     // This is the first request. Note how we start the response with CON
     $response  = "CON What would you want to check \n";
@@ -18,12 +18,12 @@ if ($text == "") {
 } else if ($text == "1") {
     // Business logic for first level response
     
-   $reponse =  "Baud rate";
+   $response =  "Baud rate";
 
 } else if ($text == "2") {
     // Business logic for first level response
     // This is a terminal request. Note how we start the response with END
-    $reponse =  $phoneNumber;
+    $response =  $phoneNumber;
 
 } else{
     $response = "END Invalid Request!";

@@ -12,18 +12,19 @@ $text        = $_POST["text"];
 if ($text == "") {
     // This is the first request. Note how we start the response with CON
     $response  = "CON What would you want to check \n";
-    $response .= "1. Check status \n";
-    $response .= "2. Make payments";
+    $response .= "1. Check soil moisture \n";
 
 } else if ($text == "1") {
     // Business logic for first level response
-    
-   $response =  "CON Baud rate";
+    $filename = 'soil.txt';
+    f = fopen($filename, 'r');
 
-} else if ($text == "2") {
-    // Business logic for first level response
-    // This is a terminal request. Note how we start the response with END
-    $response =  "CON".$phoneNumber;
+    if ($f) {
+        $contents = fread($f, filesize($filename));
+        fclose($f);
+        $response = "The soil moisture is: ".nl2br($contents);
+    }
+
 
 } else{
     $response = "END Invalid Request!";

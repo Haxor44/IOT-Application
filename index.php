@@ -38,7 +38,16 @@
                         echo "Soil moisture level is:".$moisture;
                     }
                     
-                    echo $moisture;
+                    $filename = 'soil.txt';
+                    $f = fopen($filename, 'r');
+
+                    if ($f) {
+                        $contents = fread($f, filesize($filename));
+                        fclose($f);
+                        echo "The soil moisture is: ".nl2br($contents)."%";
+                    }
+
+
 
                 ?>
               </p>

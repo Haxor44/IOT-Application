@@ -11,9 +11,9 @@ created 2020-06-07 by cweinhofer
 with help from Cicicok */
 #include <WiFi.h>	
 
-const char* ssid     = "Haxor"; // Change this to your WiFi SSID
-const char* password = "wbbe2586";
-const char* host = "192.168.130.252";
+const char* ssid     = ""; // Change this to your WiFi SSID
+const char* password = "";
+const char* host = "";
 const int port = 80;
 
 const int sensor_pin = 34;
